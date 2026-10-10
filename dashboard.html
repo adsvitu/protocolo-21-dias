@@ -129,7 +129,7 @@ async function initSync(){
 
 let syncTimeout;
 function syncToCloud() {
-  if(!secretToken || !supabase) return;
+  if(!currentUser || !supabaseClient) return;
   $('saved').textContent = 'Salvando na nuvem...';
   clearTimeout(syncTimeout);
   syncTimeout = setTimeout(async () => {
